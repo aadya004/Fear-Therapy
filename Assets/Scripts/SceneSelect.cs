@@ -3,12 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+     // Reference to the first teleport target      
     public void LoadNyctophobiaScene()
     {
-        print("ButtonPress");
-          // replace with your actual scene name
-        SceneManager.LoadScene("TestDemo");
-
+        SceneManager.LoadScene("Nycto"); // replace with your actual scene name
     }
 
     public void LoadClaustrophobiaScene()
@@ -18,12 +16,10 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadAcrophobiaScene()
     {
-        
-        SceneManager.LoadScene("Overview");
+        SceneManager.LoadScene("Acro");
     }
-
-    public void LoadPeacefulScene()
+    public void LoadMainMenu()
     {
-        SceneManager.LoadScene("PeacefulScene");
-    } 
+        SceneManager.LoadScene("mainmenu");
+    }
 }

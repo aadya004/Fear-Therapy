@@ -6,6 +6,12 @@ public class FlickerLights : MonoBehaviour
     public Light[] pointLights;
     public float flickerSpeed = 0.1f;
 
+    // Timings
+    public float initialLightOnDuration = 60f;  // First lights on
+    public float flickerDuration = 15f;         // Flicker time
+    public float blackoutDuration = 25f;        // Blackout time
+    public float repeatLightOnDuration = 60f;   // Light on after blackout
+
     private void Start()
     {
         Invoke("StartLightSequence", 3f); // Optional delay before starting
@@ -13,31 +19,36 @@ public class FlickerLights : MonoBehaviour
 
     void StartLightSequence()
     {
-        StartCoroutine(LightCycleLoop());
+        StartCoroutine(LightSequence());
     }
 
-    IEnumerator LightCycleLoop()
+    IEnumerator LightSequence()
     {
+        // Step 1: Initial lights ON
+        SetLightsState(true);
+        yield return new WaitForSeconds(initialLightOnDuration);
+
+        // Start looping
         while (true)
         {
-            // 1. Lights ON for 2 minutes
-            SetLightsState(true);
-            yield return new WaitForSeconds(120f);
+            // Step 2: Flicker
+            yield return StartCoroutine(FlickerEffect());
 
-            // 2. Flicker for 10 seconds
-            yield return StartCoroutine(FlickerEffect(10f));
-
-            // 3. Lights OFF for 45 seconds
+            // Step 3: Blackout
             SetLightsState(false);
-            yield return new WaitForSeconds(45f);
+            yield return new WaitForSeconds(blackoutDuration);
+
+            // Step 4: Lights ON for 60 sec
+            SetLightsState(true);
+            yield return new WaitForSeconds(repeatLightOnDuration);
         }
     }
 
-    IEnumerator FlickerEffect(float duration)
+    IEnumerator FlickerEffect()
     {
         float elapsedTime = 0f;
 
-        while (elapsedTime < duration)
+        while (elapsedTime < flickerDuration)
         {
             foreach (Light light in pointLights)
             {
@@ -48,7 +59,7 @@ public class FlickerLights : MonoBehaviour
             elapsedTime += flickerSpeed;
         }
 
-        SetLightsState(true); // Reset to lights ON after flicker
+        SetLightsState(false); // End flicker with lights off before blackout
     }
 
     void SetLightsState(bool state)
@@ -59,6 +70,7 @@ public class FlickerLights : MonoBehaviour
         }
     }
 }
+
 
 
 

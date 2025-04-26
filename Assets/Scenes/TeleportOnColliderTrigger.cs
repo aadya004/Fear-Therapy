@@ -12,11 +12,7 @@ public class TeleportOnColliderTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check the name of the collider that was entered
-        if (other.name == "Cube0")
-        {
-            TeleportTo(one);
-        }
-        else if (other.name == "Cube1")
+        if (other.name == "Cube1")
         {
             TeleportTo(two);
             groundui.gameObject.SetActive(false);
@@ -45,4 +41,5 @@ public class TeleportOnColliderTrigger : MonoBehaviour
             Debug.LogWarning("Teleport target not set!");
         }
     }
+    
 }
