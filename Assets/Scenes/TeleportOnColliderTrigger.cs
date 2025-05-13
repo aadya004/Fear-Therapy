@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TeleportOnColliderTrigger : MonoBehaviour
 {
@@ -6,8 +7,10 @@ public class TeleportOnColliderTrigger : MonoBehaviour
     public Transform one;
     public Transform two;
     public Transform three;
-
     public Transform groundui;
+
+    public Transform door1;
+    public Transform door2;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -25,6 +28,14 @@ public class TeleportOnColliderTrigger : MonoBehaviour
         {
             TeleportTo(ground);
             groundui.gameObject.SetActive(true);
+        }
+        else if (other.name == "door1")
+        {
+            SceneManager.LoadScene("mainmenu");
+        }
+        else if (other.name == "door2")
+        {
+            SceneManager.LoadScene("Acro");
         }
     }
 
