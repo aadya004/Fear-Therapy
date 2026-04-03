@@ -1,51 +1,51 @@
-**Fear Therapy — VR Exposure Therapy System**
+# Fear Therapy — VR Exposure Therapy System
 
-Blending psychology, technology, and empathy to support mental well-being through immersive virtual reality.
+> *Blending psychology, technology, and empathy to support mental well-being through immersive virtual reality.*
 
 A virtual reality application designed to help users confront and gradually overcome common phobias through controlled, progressive exposure therapy — personalised in real time using biometric feedback.
 
-Built for Meta Quest 2 using Unity and C#.
+Built for **Meta Quest 2** using **Unity** and **C#**.
 
 ---
 
-**Overview**
+## Overview
 
 Fear Therapy simulates real-world phobia triggers in a safe, controlled virtual environment. As the user engages with each scenario, their **real-time heart rate** is monitored via the ThingsSpeak API to dynamically adjust the intensity of the experience — ensuring it remains challenging but never overwhelming.
 
 The system targets three phobias:
-- Acrophobia — fear of heights
-- Nyctophobia — fear of darkness
-- Claustrophobia — fear of confined spaces
+- **Acrophobia** — fear of heights
+- **Nyctophobia** — fear of darkness
+- **Claustrophobia** — fear of confined spaces
 
 This project was built as part of an academic submission exploring the intersection of immersive technology and mental health — drawing on principles of **Cognitive Behavioural Therapy (CBT)** and **Graduated Exposure Therapy**.
 
 ---
 
-**Features**
+## Features
 
-- Multi-Phobia Scenarios — Distinct immersive 3D environments for each phobia, designed to feel realistic yet safe
-- Real-Time Biometric Adaptation — Heart rate data pulled live from ThingsSpeak API dynamically adjusts scene intensity
-- Progressive Difficulty Scaling — Exposure intensity increases gradually as the user grows more comfortable
-- Modular Scene Architecture — Reusable Unity components for scalable scenario creation
-- Meta Quest 2 Optimised — Performance-tuned for standalone VR hardware ensuring smooth, comfortable frame rates
+- **Multi-Phobia Scenarios** — Distinct immersive 3D environments for each phobia, designed to feel realistic yet safe
+- **Real-Time Biometric Adaptation** — Heart rate data pulled live from ThingsSpeak API dynamically adjusts scene intensity
+- **Progressive Difficulty Scaling** — Exposure intensity increases gradually as the user grows more comfortable
+- **Modular Scene Architecture** — Reusable Unity components for scalable scenario creation
+- **Meta Quest 2 Optimised** — Performance-tuned for standalone VR hardware ensuring smooth, comfortable frame rates
 
 ---
 
-**Tech Stack**
+## 🛠️ Tech Stack
 
-| Layer                 | Technology |
-
-| Game Engine           | Unity |
-| Scripting Language    | C# |
-| VR Hardware           | Meta Quest 2 |
+| Layer | Technology |
+|---|---|
+| Game Engine | Unity |
+| Scripting Language | C# |
+| VR Hardware | Meta Quest 2 |
 | Biometric Integration | ThingsSpeak API |
-| 3D Design             | Unity built-in tools, Blender |
+| 3D Design | Unity built-in tools, Blender |
 
 ---
 
-**System Architecture**
+## System Architecture
 
-
+```
 User Puts On Headset
         │
         ▼
@@ -64,18 +64,19 @@ User Puts On Headset
    ▼             ▼
 Escalate      Hold / Reduce
 Intensity     Intensity
+```
 
 ---
 
-**Getting Started**
+## Getting Started
 
-Prerequisites
+### Prerequisites
 - Unity 2022.x or above
 - Meta Quest 2 headset
 - Android Build Support module installed in Unity
 - ThingsSpeak account with a heart rate monitoring channel configured
 
-**Installation**
+### Installation
 
 1. Clone the repository
 ```bash
@@ -84,7 +85,7 @@ git clone https://github.com/yourusername/fear-therapy.git
 
 2. Open the project in Unity Hub
 
-3. Switch build platform to Android (required for Meta Quest 2)
+3. Switch build platform to **Android** (required for Meta Quest 2)
 ```
 File → Build Settings → Android → Switch Platform
 ```
@@ -102,7 +103,7 @@ File → Build Settings → Build and Run
 
 ---
 
-**How It Works**
+## How It Works
 
 1. User selects a phobia scenario from the main menu
 2. VR environment loads at its lowest intensity level
@@ -114,17 +115,17 @@ File → Build Settings → Build and Run
 
 ---
 
-**Performance Targets**
+## 📊 Performance Targets
 
-| Metric                 | Target |
-
-| Frame Rate             | 72 FPS (Meta Quest 2 standard) |
+| Metric | Target |
+|---|---|
+| Frame Rate | 72 FPS (Meta Quest 2 standard) |
 | Heart Rate API Polling | < 2 second latency |
-| Scene Load Time        | < 3 seconds |
+| Scene Load Time | < 3 seconds |
 
 ---
 
-**Future Scope**
+## Future Scope
 
 - [ ] Therapist dashboard to monitor patient sessions remotely
 - [ ] Persistent session history and progress tracking per user
@@ -134,7 +135,7 @@ File → Build Settings → Build and Run
 
 ---
 
-**Why This Project**
+## Why This Project
 
 Most therapy tools are screen-based and passive. VR changes that — it puts the person *inside* the experience, which is exactly what exposure therapy needs. Building Fear Therapy meant thinking about the user not just as someone clicking through an interface, but as someone who is genuinely anxious, genuinely brave, and deserving of a system that responds to them as a human being.
 
@@ -142,13 +143,13 @@ That's the design philosophy behind every decision here — from the adaptive di
 
 ---
 
-**Author**
+## Author
 
-Aadya, Dhruv Jha, Yuvika Mehta
+**Aadya, Dhruv Jha, Yuvika Mehta**
 B.Tech Computer Science Engineering, SRM IST
 
 ---
 
-**License**
+## License
 
 This project is for academic and personal use only. Not intended for clinical or medical deployment.
